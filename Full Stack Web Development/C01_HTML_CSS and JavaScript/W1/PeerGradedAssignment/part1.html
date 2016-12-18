@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dating Website</title>
+	</head>
+	<body>
+		<h1>Please Enter Your Details For Our Dating Website!</h1>
+		<!-- Start form here -->
+		<form enctype="multipart/form-data" method="post" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+
+			<!-- Your Face FieldSet -->
+			<fieldset>
+				<legend>Your Face</legend>
+				<label for="flAvatar">Your image:</label> <input type="file" name="flAvatar" id="flAvatar" required><br>
+				<label>Image preview:</label> <img id="preview" src="" alt="Your Face">
+			</fieldset>
+
+			<br>
+			
+			<!-- Your General Details -->
+			<fieldset>
+				<legend>Your General Details</legend>
+				<label for="txtName">Name:</label> <input type="text" name="txtName" id="txtName" placeholder="Your full name" required><br>
+				<label>Gender:</label> 
+						<input type="radio" name="gender" id="rdoMale" value="male"> <label for="rdoMale">Male</label> 
+						<input type="radio" name="gender" id="rdoFeMale" value="female"> <label for="rdoFeMale">Female</label><br>
+				<label for="nbAge">Age</label>: <input type="number" name="nbAge" id="nbAge" step="1" min="18" max="99" required><br>
+				<label for="dtDob">Date of birth</label>: <input type="date" name="dtDob" id="dtDob"><br>
+				<label for="clColor">Favorite color</label>: <input type="color" name="clColor" id="clColor"><br>
+				<label for="sltCountry">Which country</label>: <select name="sltCountry" id="sltCountry">
+									<option value="na">no selection</option>
+									<option value="jp">Japan</option>
+									<option value="se">Sweden</option>
+									<option value="tl">Thailand</option>
+									<option value="us">United States</option>
+									<option value="vi">Vietnam</option>
+								</select>
+			</fieldset>
+
+			<br>
+
+			<!-- Your Indicators -->
+			<fieldset>
+				<legend>Your Indicators</legend>
+				<label>Height</label>: Short <input type="range" name="rngHeight" id="rngHeight" min="0" max="100"> Tall<br>
+				<label>Salary</label>: Poor <input type="range" name="rngSalary" id="rngSalary" min="0" max="100"> Rich
+			</fieldset>
+			
+			<br>
+
+			<!-- Your Contact Information -->
+			<fieldset>
+				<legend>Your Contact Information</legend>
+				<label for="txtEmail">Email</label>: <input type="email" name="txtEmail" id="txtEmail" required><br>
+				<label for="txtMobile">Mobile</label>: <input type="tel" name="txtMobile" id="txtMobile"><br>
+				<label for="txaAdd">Address</label>: <textarea name="txaAdd" id="txaAdd" rows="4" cols="50"></textarea><br>
+				<label>Method to contact you:</label> <input type="checkbox" name="chkEmail" id="chkEmail" value="email"> <label for="chkEmail">Email</label> 
+									   <input type="checkbox" name="chkWhatsapp" id="chkWhatsapp" value="whatsapp"> <label for="chkWhatsapp">Whatsapp</label>
+									   <input type="checkbox" name="chkInapp" id="chkInapp" value="inapp"> <label for="chkInapp">In-app chat</label>
+			</fieldset>
+			
+			<br>
+			
+			<!-- Submit button -->
+			<input type=submit value="Submit">
+			
+		</form>
+		<!-- End form here -->
+	</body>
+</html>

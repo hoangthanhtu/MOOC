@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dating Website</title>
+	</head>
+	<style>
+		body {
+			font-family:"Arial";
+		}
+	
+		fieldset {
+			background:lightyellow;
+			border:10px solid yellow;
+			margin-bottom:10px;
+			width:720px;
+		}
+		
+		label {
+			width:180px;
+			display:inline-block;
+			text-align:right;
+			vertical-align:top;
+		}
+		
+		label.item {
+			width:auto;
+		}
+		
+		label.min {
+			background:#cc0000;
+			color:white;
+			text-align:center;
+			width:50px;
+		}
+		
+		label.max {
+			background:#993399;
+			color:white;
+			text-align:center;
+			width:50px;
+		}
+
+		label:hover {
+			font-size: 20px;
+		}
+
+		input:hover {
+			font-size: 20px;
+		}
+
+		select:hover {
+			font-size: 20px;
+		}
+
+		textarea {
+			width:360px;
+			height:50px;
+		}
+		
+		p {
+			margin-top:5px;
+			margin-bottom:5px;
+		}
+}
+		
+	</style>
+	<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+	<body>
+		<h1>Please Enter Your Details For Our Dating Website!</h1>
+		<!-- Start form here -->
+		<form enctype="multipart/form-data" method="post" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+
+			<!-- Your Face FieldSet -->
+			<fieldset>
+				<legend>Your Face</legend>
+				<p><label for="flAvatar">Your image:</label> <input type="file" name="flAvatar" id="flAvatar" required></p>
+				<p><label>Image preview:</label> <img id="preview" src="" alt="Your Face"></p>
+			</fieldset>
+			
+			<!-- Your General Details -->
+			<fieldset>
+				<legend>Your General Details</legend>
+				<p><label for="txtName">Name:</label> <input type="text" name="txtName" id="txtName" placeholder="Your full name" required></p>
+				<p>
+					<label>Gender:</label> 
+					<input type="radio" name="gender" id="rdoMale" value="male"><label for="rdoMale" class="item">Male</label> 
+					<input type="radio" name="gender" id="rdoFeMale" value="female"><label for="rdoFeMale" class="item">Female</label>
+				</p>
+				<p><label for="nbAge">Age:</label> <input type="number" name="nbAge" id="nbAge" step="1" min="18" max="99" required></p>
+				<p><label for="dtDob">Date of birth:</label> <input type="date" name="dtDob" id="dtDob"></p>
+				<p><label for="clColor">Favorite color:</label> <input type="color" name="clColor" id="clColor"></p>
+				<p>
+					<label for="sltCountry">Which country:</label> <select name="sltCountry" id="sltCountry">
+						<option value="na"></option>
+						<option value="jp">Japan</option>
+						<option value="se">Sweden</option>
+						<option value="tl">Thailand</option>
+						<option value="us">United States</option>
+						<option value="vi">Vietnam</option>
+					</select>
+				</P>
+			</fieldset>
+
+			<!-- Your Indicators -->
+			<fieldset>
+				<legend>Your Indicators</legend>
+				<label>Height:</label> <label class="min">Short</label> <input type="range" name="rngHeight" id="rngHeight" min="0" max="100"> <label class="max">Tall</label><br>
+				<label>Salary:</label> <label class="min">Poor</label> <input type="range" name="rngSalary" id="rngSalary" min="0" max="100"> <label class="max">Rich</label>
+			</fieldset>
+			
+			<!-- Your Contact Information -->
+			<fieldset>
+				<legend>Your Contact Information</legend>
+				<p><label for="txtEmail">Email:</label> <input type="email" name="txtEmail" id="txtEmail" required></p>
+				<p><label for="txtMobile">Mobile:</label> <input type="tel" name="txtMobile" id="txtMobile"></p>
+				<p><label for="txaAdd">Address:</label> <textarea name="txaAdd" id="txaAdd"></textarea></p>
+				<p>
+					<label>Method to contact you:</label>
+					<input type="checkbox" name="chkEmail" id="chkEmail" value="email"><label for="chkEmail" class="item">Email</label> 
+					<input type="checkbox" name="chkWhatsapp" id="chkWhatsapp" value="whatsapp"><label for="chkWhatsapp" class="item">Whatsapp</label>
+					<input type="checkbox" name="chkInapp" id="chkInapp" value="inapp"><label for="chkInapp" class="item">In-app chat</label>
+				</p>
+			</fieldset>
+			
+			<!-- Submit button -->
+			 <input type=submit value="Submit">
+
+		</form>
+		<!-- End form here -->
+	</body>
+</html>

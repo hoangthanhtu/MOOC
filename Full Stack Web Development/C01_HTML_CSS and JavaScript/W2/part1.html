@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<title>Color Guessing Game</title>
+	</head>
+	<script>
+
+		// Global variable colors array (req#1)
+		var colors = ["aqua", "blue", "cyan", "gold", "gray", "green", "magenta",
+	              "navy", "orange", "purple", "red", "violet", "white", "yellow"];
+
+		var randomNum = 0;
+
+		// Main game function (req#2)
+		function doGame() {
+
+			// Flag to stop the loop
+			var isFinished = false;
+
+			// variale to store the answer of player
+			var strGuessInput = "";
+
+			// Step1: Sorting array to ensure array element in sorting order
+			colors.sort();
+
+			// Step2: Get random number (req#2.1)
+			randomNum = getRandomNumber();
+
+			// Step3: Repeat to ask player guess color (req#2.3)
+			while (!isFinished) {
+
+				// ask the player for their guess using prompt() (req#2.3.1)
+				strGuessInput = prompt("I am thinking of one of these colors:\n\n" +
+									colors.join(", ") + "\n\nWhat color am I thinking of?");
+
+				// Checking the guess input value with target value (req#3)
+				isFinished = strGuessInput == colors[randomNum];
+
+			}
+		}
+
+		// Function to get the Random numbers
+		function getRandomNumber() {
+			return Math.floor(Math.random() * (colors.length - 1));
+		}
+
+	</script>
+
+	<body onload="doGame()">
+
+	</body>
+</html>
